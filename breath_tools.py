@@ -14,3 +14,14 @@ def get_pranayama_technique(user_input: str):
             return database[mood]
             
     return "Deep Belly Breathing for general awareness."
+
+
+def get_pranayama_for_heart_rate(bpm: int) -> str:
+    """Choose a conservative practice from the latest heart-rate reading."""
+    if bpm >= 100:
+        mood = "stressed"
+    elif bpm < 60:
+        mood = "tired"
+    else:
+        mood = "anxious"
+    return get_pranayama_technique(mood)
